@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
 
@@ -30,7 +30,7 @@ jobs:
           args: --delete --region ca-central-1
 
         env:
-          AWS_S3_BUCKET: spa-ay-bootcamp
+          AWS_S3_BUCKET: spa-free-web-bootcamp
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           SOURCE_DIR: ./dist
