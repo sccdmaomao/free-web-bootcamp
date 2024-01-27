@@ -1,0 +1,23 @@
+{
+    "extends": "./node_modules/@tsconfig/recommended/tsconfig.json",
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "src",
+        "sourceMap": true,
+        "outDir": "ts-build",
+        "esModuleInterop": true,
+        "jsx": "react-jsx", // no longer need to import React with this
+        "moduleResolution": "node",
+        "lib": [
+            "es6",
+            "es7",
+            "dom"
+        ],
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitAny": false,
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

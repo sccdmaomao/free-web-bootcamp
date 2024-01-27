@@ -1,0 +1,63 @@
+{
+  "name": "free-web-bootcamp",
+  "version": "1.0.0",
+  "description": "learn web development for free!",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx  --fix",
+    "start": "webpack-dev-server --mode development",
+    "deploy": "aws s3 sync dist/ s3://spa-free-web-bootcamp"
+  },
+  "repository": "https://github.com/sccdmaomao/free-web-bootcamp",
+  "keywords": [
+    "bootcamp",
+    "SPA",
+    "Web development"
+  ],
+  "author": "Guohao Yan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sccdmaomao/free-web-bootcamp/issues"
+  },
+  "homepage": "https://github.com/sccdmaomao/free-web-bootcamp",
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/polyfill": "^7.12.1",
+    "@tsconfig/recommended": "^1.0.1",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.7.1",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1",
+    "yarn": "^1.22.19"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource-variable/josefin-slab": "^5.0.14",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "^5.14.7",
+    "@mui/material": "^5.14.7",
+    "framer-motion": "^10.16.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2",
+    "typescript": "^4.8.4"
+  }
+}
