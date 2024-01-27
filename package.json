@@ -54,10 +54,13 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.7",
     "@mui/material": "^5.14.7",
+    "@types/react-syntax-highlighter": "^15.5.11",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
+    "react-syntax-highlighter": "^15.5.0",
     "typescript": "^4.8.4"
   }
 }

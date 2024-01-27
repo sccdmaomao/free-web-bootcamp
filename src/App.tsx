@@ -1,35 +1,49 @@
 import GlobalStyles from '@mui/material/GlobalStyles'
 import { ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { MainPage, Playground, ROUTES } from 'routes'
+
+import Nav from './components/Nav'
 
 const App = () => {
     const router = createBrowserRouter([
         {
             path: `/`,
-            element: <div>Hello world</div>
-            // children: [
-            //     {
-            //         path: '',
-            //         element: <LandingPage />,
-            //     },
-            //     {
-            //         path: '/schedule',
-            //         element: <SchedulePage />,
-            //     },
-            //     { path: '/curriculum/:unit?', element: <div>curriculum</div> },
-            //     { path: '/projects', element: <ProjectsPage /> },
-            //     { path: '/faq', element: <FaqPage /> },
-            // ],
-        }
+            element: <Nav />,
+            children: [
+                {
+                    path: ROUTES.Main.path,
+                    element: <MainPage />,
+                },
+                {
+                    path: ROUTES.Roadmap.path,
+                    element: <div>road map</div>,
+                },
+                {
+                    path: ROUTES.Example.path,
+                    element: <div>example</div>,
+                },
+                {
+                    path: ROUTES.Support.path,
+                    element: <div>support</div>,
+                },
+                {
+                    path: ROUTES.Contact.path,
+                    element: <div>contact</div>,
+                },
+                {
+                    path: ROUTES.Playground.path,
+                    element: <Playground />,
+                },
+            ],
+        },
     ])
     return (
         <>
-            <GlobalStyles
-                styles={{ body: { margin: 0, userSelect: 'none' } }}
-            />
+            <GlobalStyles styles={{ body: { margin: 0 } }} />
             <RouterProvider router={router} />
         </>
-    ) 
+    )
 }
 
 export default App
