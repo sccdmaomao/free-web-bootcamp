@@ -6,6 +6,7 @@ const PlaygroundSection: FC<{
 }> = ({ sectionTitle, children }) => {
     return (
         <section>
+            {/* todo: add smooth scroll */}
             <h3>{sectionTitle}</h3>
             {children}
         </section>

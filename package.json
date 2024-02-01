@@ -55,6 +55,7 @@
     "@mui/icons-material": "^5.14.7",
     "@mui/material": "^5.14.7",
     "@types/react-syntax-highlighter": "^15.5.11",
+    "file-loader": "^6.2.0",
     "framer-motion": "^10.16.4",
     "i18next": "^23.8.2",
     "i18next-http-backend": "^2.4.3",

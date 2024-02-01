@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 import { Button, Dropdown, Menu, MenuButton, MenuItem } from '@mui/base'
 import { Typography } from '@mui/material'
-import { useMemo } from 'react'
+import PlaceholderLogoIcon from 'icons/PlaceholderLogoIcon'
+import { ReactNode, useMemo } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { ROUTES } from 'routes'
 import theme, { primary } from 'theme'
@@ -15,6 +16,13 @@ const StyledNav = styled('nav')`
 const Nav = () => {
     const navigate = useNavigate()
     const NavigationItems = useMemo(() => {
+        const navbarItems: ReactNode[] = []
+
+        const NavIconButton = (
+            <Button onClick={() => navigate(ROUTES.Main.path)}>
+                <PlaceholderLogoIcon />
+            </Button>
+        )
         const MenuNavigation = (
             <div key="courseMenu" style={{ display: 'inline' }}>
                 <Dropdown>
@@ -29,22 +37,26 @@ const Nav = () => {
                 </Dropdown>
             </div>
         )
-        const ButtonNavigation = Object.entries(ROUTES).map(
-            ([key, route], index) => (
-                <Button
-                    key={route.label}
-                    onClick={() => {
-                        navigate(route.path)
-                    }}
-                >
-                    <Typography color={theme.palette.text.primary}>
-                        {route.label}
-                    </Typography>
-                </Button>
-            )
-        )
-        ButtonNavigation.splice(1, 0, MenuNavigation) // insert MenuButton at index 1
-        return ButtonNavigation
+        const routesToBtn = [
+            ROUTES.Roadmap,
+            ROUTES.Contact,
+            ROUTES.Example,
+            ROUTES.Playground,
+        ]
+        const ButtonNavigation = routesToBtn.map((route) => (
+            <Button
+                key={route.label}
+                onClick={() => {
+                    navigate(route.path)
+                }}
+            >
+                <Typography color={theme.palette.text.primary}>
+                    {route.label}
+                </Typography>
+            </Button>
+        ))
+        navbarItems.push(NavIconButton, MenuNavigation, ...ButtonNavigation)
+        return navbarItems
     }, [])
 
     return (
