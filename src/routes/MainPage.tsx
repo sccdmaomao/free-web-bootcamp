@@ -1,5 +1,12 @@
+import { CenteredDiv } from 'components/ResponsiveComponents'
+
 const MainPage = () => {
-    return <div>Welcome to FREE-WEB-BOOTCAMP</div>
+    return (
+        <CenteredDiv>
+            Welcome to FREE-WEB-BOOTCAMP Free professional web development
+            training!
+        </CenteredDiv>
+    )
 }
 
 export default MainPage

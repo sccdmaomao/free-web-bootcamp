@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 import { Button, Dropdown, Menu, MenuButton, MenuItem } from '@mui/base'
 import { Typography } from '@mui/material'
-import PlaceholderLogoIcon from 'icons/PlaceholderLogoIcon'
+import { CenteredDiv } from 'components/ResponsiveComponents'
+import LogoIcon from 'icons/PlaceholderLogoIcon'
 import { ReactNode, useMemo } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { ROUTES } from 'routes'
@@ -18,13 +19,13 @@ const Nav = () => {
     const NavigationItems = useMemo(() => {
         const navbarItems: ReactNode[] = []
 
-        const NavIconButton = (
-            <Button onClick={() => navigate(ROUTES.Main.path)}>
-                <PlaceholderLogoIcon />
+        const LogoIconNavButton = (
+            <Button key="nav-logo" onClick={() => navigate(ROUTES.Main.path)}>
+                <LogoIcon />
             </Button>
         )
         const MenuNavigation = (
-            <div key="courseMenu" style={{ display: 'inline' }}>
+            <div key="nav-menu" style={{ display: 'inline' }}>
                 <Dropdown>
                     <MenuButton>
                         <Typography color={theme.palette.text.primary}>
@@ -45,7 +46,7 @@ const Nav = () => {
         ]
         const ButtonNavigation = routesToBtn.map((route) => (
             <Button
-                key={route.label}
+                key={`nav-btn-${route.label}`}
                 onClick={() => {
                     navigate(route.path)
                 }}
@@ -55,13 +56,16 @@ const Nav = () => {
                 </Typography>
             </Button>
         ))
-        navbarItems.push(NavIconButton, MenuNavigation, ...ButtonNavigation)
+        navbarItems.push(LogoIconNavButton, MenuNavigation, ...ButtonNavigation)
         return navbarItems
     }, [])
 
     return (
         <div>
-            <StyledNav>{NavigationItems}</StyledNav>
+            <StyledNav>
+                <CenteredDiv>{NavigationItems} </CenteredDiv>
+            </StyledNav>
+
             <Outlet />
         </div>
     )
