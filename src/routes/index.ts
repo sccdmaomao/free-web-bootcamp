@@ -3,7 +3,7 @@ import Playground from './Playground'
 
 export const ROUTES = {
     Main: {
-        label: 'Main',
+        label: 'Introduction',
         path: '',
     },
     Roadmap: {

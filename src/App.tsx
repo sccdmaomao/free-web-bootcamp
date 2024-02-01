@@ -2,6 +2,7 @@ import GlobalStyles from '@mui/material/GlobalStyles'
 import { ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { MainPage, Playground, ROUTES } from 'routes'
+import theme from 'theme'
 
 import Nav from './components/Nav'
 
@@ -39,10 +40,17 @@ const App = () => {
         },
     ])
     return (
-        <>
-            <GlobalStyles styles={{ body: { margin: 0 } }} />
+        <ThemeProvider theme={theme}>
+            <GlobalStyles
+                styles={{
+                    body: {
+                        margin: 0,
+                        backgroundColor: theme.palette.background.default,
+                    },
+                }}
+            />
             <RouterProvider router={router} />
-        </>
+        </ThemeProvider>
     )
 }
 

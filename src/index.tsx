@@ -4,6 +4,8 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import '@fontsource-variable/josefin-slab'
+// initialize i18n
+import './utils/i18n'
 
 import ReactDOM from 'react-dom/client'
 
