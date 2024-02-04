@@ -1,25 +1,35 @@
 import { createTheme } from '@mui/material/styles'
 
+import {
+    accent,
+    background,
+    complementary,
+    primary,
+    secondary,
+    text,
+} from './index'
+
 const theme = createTheme({
     palette: {
+        mode: 'dark',
         primary: {
-            main: '#3498db', // Dodger Blue
+            main: primary,
         },
         secondary: {
-            main: '#2ecc71', // Emerald Green
+            main: secondary,
         },
         error: {
-            main: '#e74c3c', // Alizarin Red
+            main: '#e74c3c',
         },
         background: {
-            default: '#f8f9fa', // Light Gray
+            default: background,
         },
         text: {
-            primary: '#333333', // Dark Gray
+            primary: text,
         },
         // @ts-expect-error
         accent: {
-            main: '#f39c12', // Orange
+            main: accent,
         },
     },
 })

@@ -1,11 +1,18 @@
-import { CenteredDiv } from 'components/ResponsiveComponents'
+import { styled, Typography } from '@mui/material'
+
+const TitleWrapper = styled('div')((props) => ({
+    textAlign: 'center',
+    color: props.theme.palette.secondary.main,
+    fontWeight: 'bold',
+}))
 
 const MainPage = () => {
     return (
-        <CenteredDiv>
-            Welcome to FREE-WEB-BOOTCAMP Free professional web development
-            training!
-        </CenteredDiv>
+        <TitleWrapper>
+            <Typography variant="h1">
+                Professional Web Development Online Training
+            </Typography>
+        </TitleWrapper>
     )
 }
 

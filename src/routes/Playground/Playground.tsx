@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 
 import PgCodeBlock from './PgCodeBlock'
+import PgFontAwesome from './PgFontAwesome'
 import PgI18n from './PgI18n'
 import PgResponsive from './PgResponsive'
 
@@ -10,7 +11,7 @@ const Wrapper = styled('div')`
         text-align: center;
     }
     > section {
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid;
         padding-bottom: 1em;
     }
     > section:last-child {
@@ -25,6 +26,7 @@ const Playground = () => {
             <PgCodeBlock />
             <PgI18n />
             <PgResponsive />
+            <PgFontAwesome />
         </Wrapper>
     )
 }

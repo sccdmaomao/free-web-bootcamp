@@ -25,6 +25,7 @@ const App = () => {
                     body: {
                         margin: 0,
                         backgroundColor: theme.palette.background.default,
+                        color: theme.palette.text.primary,
                     },
                 }}
             />

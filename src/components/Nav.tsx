@@ -1,6 +1,5 @@
-import styled from '@emotion/styled'
 import { Button, Dropdown, Menu, MenuButton, MenuItem } from '@mui/base'
-import { Typography } from '@mui/material'
+import { styled, Typography } from '@mui/material'
 import { CenteredDiv } from 'components/ResponsiveComponents'
 import LogoIcon from 'icons/PlaceholderLogoIcon'
 import { ReactNode, useMemo } from 'react'
@@ -11,6 +10,13 @@ import theme, { primary } from 'theme'
 const StyledNav = styled('nav')`
     background-color: ${primary};
     padding: 1em;
+    button {
+        background: transparent;
+        border: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 `
 
 // Main navigation bar
@@ -20,7 +26,11 @@ const Nav = () => {
         const navbarItems: ReactNode[] = []
 
         const LogoIconNavButton = (
-            <Button key="nav-logo" onClick={() => navigate(ROUTES.Main.path)}>
+            <Button
+                key="nav-logo"
+                type="button"
+                onClick={() => navigate(ROUTES.Main.path)}
+            >
                 <LogoIcon />
             </Button>
         )
