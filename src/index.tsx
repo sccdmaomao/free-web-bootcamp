@@ -6,6 +6,7 @@ import '@fontsource/roboto/700.css'
 import '@fontsource-variable/josefin-slab'
 // initialize i18n
 import './utils/i18n'
+import 'reactflow/dist/style.css'
 
 import ReactDOM from 'react-dom/client'
 

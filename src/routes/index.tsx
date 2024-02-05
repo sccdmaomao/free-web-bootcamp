@@ -1,5 +1,6 @@
 import MainPage from './MainPage'
 import Playground from './Playground'
+import RoadmapPage from './RoadmapPage'
 
 // Object used in App.tsx to define valid routes
 export const ROUTES = {
@@ -12,7 +13,7 @@ export const ROUTES = {
         label: 'Roadmap',
         path: '/roadmap',
 
-        element: <div>road map</div>,
+        element: <RoadmapPage />,
     },
     Example: {
         label: 'Example',

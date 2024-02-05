@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import PgCodeBlock from './PgCodeBlock'
 import PgFontAwesome from './PgFontAwesome'
 import PgI18n from './PgI18n'
+import PgNodeGraph from './PgNodeGraph'
 import PgResponsive from './PgResponsive'
 
 const Wrapper = styled('div')`
@@ -27,6 +28,7 @@ const Playground = () => {
             <PgI18n />
             <PgResponsive />
             <PgFontAwesome />
+            <PgNodeGraph />
         </Wrapper>
     )
 }
