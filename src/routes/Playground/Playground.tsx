@@ -14,6 +14,7 @@ const Wrapper = styled('div')`
     > section {
         border-bottom: 1px solid;
         padding-bottom: 1em;
+        margin-bottom: 1em;
     }
     > section:last-child {
         border-bottom: none;

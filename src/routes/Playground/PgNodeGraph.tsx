@@ -1,4 +1,5 @@
 import { styled } from '@mui/material'
+import { useState } from 'react'
 import ReactFlow from 'reactflow'
 
 import PlaygroundSection from './PlaygroundSection'
@@ -20,16 +21,44 @@ const initialNodes = [
 const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }]
 
 const PgNodeGraph = () => {
+    const [interactivity, setInteractivity] = useState(false)
     return (
-        <PlaygroundSection sectionTitle="Node Graph">
+        <PlaygroundSection sectionTitle="Node Graph" showBorder>
+            Graph Interactivity
+            <label>
+                <input
+                    id="interactivity-false"
+                    type="radio"
+                    name="interactivity"
+                    checked={interactivity}
+                    onChange={() => setInteractivity(true)}
+                />
+                True
+            </label>
+            <label>
+                <input
+                    id="interactivity-true"
+                    type="radio"
+                    name="interactivity"
+                    checked={!interactivity}
+                    onChange={() => setInteractivity(false)}
+                ></input>
+                False
+            </label>
             <ReactFlowWrapper>
                 <ReactFlow
                     nodes={initialNodes}
                     edges={initialEdges}
                     fitView
                     preventScrolling
-                    draggable={false}
-                    zoomOnScroll={false}
+                    draggable={interactivity}
+                    panOnDrag={interactivity}
+                    zoomOnScroll={interactivity}
+                    contentEditable={interactivity}
+                    edgesUpdatable={interactivity}
+                    nodesDraggable={interactivity}
+                    nodesConnectable={interactivity}
+                    elementsSelectable={interactivity}
                 ></ReactFlow>
             </ReactFlowWrapper>
         </PlaygroundSection>
