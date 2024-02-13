@@ -5,19 +5,21 @@ import LogoIcon from 'icons/PlaceholderLogoIcon'
 import { ReactNode, useMemo } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { ROUTES } from 'routes'
-import theme, { primary } from 'theme'
+import theme from 'theme'
 
-const StyledNav = styled('nav')`
-    background-color: ${primary};
-    padding: 1em;
-    button {
-        background: transparent;
-        border: none;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-`
+import Footer from './Footer'
+
+const StyledNav = styled('nav')((props) => ({
+    backgroundColor: theme.palette.background.default,
+    padding: '1em',
+    button: {
+        background: 'transparent',
+        border: 'none',
+        ':hover': {
+            cursor: 'pointer',
+        },
+    },
+}))
 
 // Main navigation bar
 const Nav = () => {
@@ -48,12 +50,7 @@ const Nav = () => {
                 </Dropdown>
             </div>
         )
-        const routesToBtn = [
-            ROUTES.Roadmap,
-            ROUTES.Contact,
-            ROUTES.Example,
-            ROUTES.Playground,
-        ]
+        const routesToBtn = [ROUTES.Roadmap, ROUTES.Example, ROUTES.Playground]
         const ButtonNavigation = routesToBtn.map((route) => (
             <Button
                 key={`nav-btn-${route.label}`}
@@ -75,8 +72,8 @@ const Nav = () => {
             <StyledNav>
                 <CenteredDiv>{NavigationItems} </CenteredDiv>
             </StyledNav>
-
             <Outlet />
+            <Footer />
         </div>
     )
 }

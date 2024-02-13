@@ -20,11 +20,6 @@ export const ROUTES = {
         path: '/examples',
         element: <div>example</div>,
     },
-    Contact: {
-        label: 'Contact',
-        path: '/contact',
-        element: <div>contact</div>,
-    },
     Playground: {
         label: 'Playground',
         path: '/playground',

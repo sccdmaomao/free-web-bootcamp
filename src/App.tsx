@@ -2,7 +2,7 @@ import GlobalStyles from '@mui/material/GlobalStyles'
 import { ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { ROUTES } from 'routes'
-import theme from 'theme'
+import theme, { primary } from 'theme'
 
 import Nav from './components/Nav'
 
@@ -24,7 +24,7 @@ const App = () => {
                 styles={{
                     body: {
                         margin: 0,
-                        backgroundColor: theme.palette.background.default,
+                        backgroundColor: primary,
                         color: theme.palette.text.primary,
                     },
                 }}
