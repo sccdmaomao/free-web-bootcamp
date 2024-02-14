@@ -2,9 +2,11 @@ import { UnfoldLess, UnfoldMore } from '@mui/icons-material'
 import { IconButton, styled } from '@mui/material'
 import { useState } from 'react'
 
+export const FOOTER_HEIGHT = '20vh'
+
 const FooterWrapper = styled('div')<{ hide?: boolean }>((props) => ({
     position: 'fixed',
-    height: props.hide ? 'auto' : '20vh',
+    height: props.hide ? 'auto' : FOOTER_HEIGHT,
     width: '100vw',
     background: props.theme.palette.background.default,
     bottom: 0,

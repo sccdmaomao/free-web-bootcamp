@@ -8,10 +8,21 @@ const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    ':hover': {
+        cursor: 'pointer',
+    },
 }))
 
 const ProjectGrid = () => {
-    const projects = [
+    interface Project {
+        id: string
+        projectName: string
+        thumbnailUrl: string
+        projectDescription: string
+        skills: string[]
+        projectUrl: string
+    }
+    const projects: Project[] = [
         {
             id: '1',
             projectName: 'Lotto-649-Generator',
@@ -19,6 +30,8 @@ const ProjectGrid = () => {
                 'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/lotto-649-generator-thumbnail.png',
             projectDescription: 'simple random number generator',
             skills: ['html', 'css'],
+            projectUrl:
+                'http://spa-649-generator.s3-website.ca-central-1.amazonaws.com/',
         },
         {
             id: '2',
@@ -27,6 +40,8 @@ const ProjectGrid = () => {
                 'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/national-park-advisor-thumbnail.png',
             projectDescription: 'Access public API and data fetching',
             skills: ['html', 'css', 'REST-ful API'],
+            projectUrl:
+                'http://spa-national-park-advisor.s3-website.ca-central-1.amazonaws.com/',
         },
         {
             id: '3',
@@ -35,6 +50,8 @@ const ProjectGrid = () => {
                 'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/sara-portfolio-thumbnail.png',
             projectDescription: 'Personal introduction portfolio website',
             skills: ['html', 'css'],
+            projectUrl:
+                'http://spa-sara-portfolio.s3-website.ca-central-1.amazonaws.com/',
         },
         {
             id: '4',
@@ -43,6 +60,8 @@ const ProjectGrid = () => {
                 'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/storybook-thumbnail.png',
             projectDescription: 'Storybook',
             skills: ['storybook', 'react components'],
+            projectUrl:
+                'http://spa-alex-storybook.s3-website.ca-central-1.amazonaws.com/?path=/story/storybook-introduction--page',
         },
         {
             id: '5',
@@ -51,14 +70,18 @@ const ProjectGrid = () => {
                 'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/tic-tac-toe-thumbnail.png',
             projectDescription: 'A simple tic-tac-toe game',
             skills: ['javascript', 'simple AI'],
+            projectUrl:
+                'http://spa-tic-tac-toe-game.s3-website-us-east-1.amazonaws.com/',
         },
         {
             id: '6',
-            projectName: 'Lotto-649-Generator',
+            projectName: 'Tips Calculator',
             thumbnailUrl:
                 'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/tips-calculator-thumbnail.png',
             projectDescription: 'A simple interactive web program',
             skills: ['html', 'css', 'javascript'],
+            projectUrl:
+                'http://spa-tips-calculator.s3-website.ca-central-1.amazonaws.com',
         },
         {
             id: '7',
@@ -74,6 +97,8 @@ const ProjectGrid = () => {
                 'api',
                 'full-size application',
             ],
+            projectUrl:
+                'http://trello-clone-project.s3-website.ca-central-1.amazonaws.com/',
         },
     ]
     return (
@@ -84,13 +109,17 @@ const ProjectGrid = () => {
         >
             {projects.map((project, index) => (
                 <Grid xs={2} sm={4} md={4} key={index}>
-                    <Item>
+                    <Item
+                        onClick={() =>
+                            window.open(project.projectUrl, '_blank')
+                        }
+                    >
                         {project.projectName}
                         <img
                             src={project.thumbnailUrl}
                             alt={project.projectDescription}
                             style={{ width: '100%' }}
-                        ></img>
+                        />
                     </Item>
                 </Grid>
             ))}

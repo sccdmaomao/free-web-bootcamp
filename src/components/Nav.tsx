@@ -7,7 +7,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { ROUTES } from 'routes'
 import theme from 'theme'
 
-import Footer from './Footer'
+import Footer, { FOOTER_HEIGHT } from './Footer'
 
 const StyledNav = styled('nav')((props) => ({
     backgroundColor: theme.palette.background.default,
@@ -20,6 +20,12 @@ const StyledNav = styled('nav')((props) => ({
         },
     },
 }))
+
+// leave margin bottom space for footer
+const OutletWrapper = styled('div')`
+    padding-bottom: 1em;
+    margin-bottom: ${FOOTER_HEIGHT};
+`
 
 // Main navigation bar
 const Nav = () => {
@@ -78,7 +84,9 @@ const Nav = () => {
             <StyledNav>
                 <CenteredDiv>{NavigationItems} </CenteredDiv>
             </StyledNav>
-            <Outlet />
+            <OutletWrapper>
+                <Outlet />
+            </OutletWrapper>
             <Footer />
         </div>
     )
