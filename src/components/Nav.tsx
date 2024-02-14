@@ -50,7 +50,13 @@ const Nav = () => {
                 </Dropdown>
             </div>
         )
-        const routesToBtn = [ROUTES.Roadmap, ROUTES.Example, ROUTES.Playground]
+        // ordered route buttons
+        const routesToBtn = [
+            ROUTES.Roadmap,
+            ROUTES.Example,
+            ROUTES.Projects,
+            ROUTES.Playground,
+        ]
         const ButtonNavigation = routesToBtn.map((route) => (
             <Button
                 key={`nav-btn-${route.label}`}
