@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 import Courses, { CourseRoutes } from './Courses/Courses'
+import DonationPage from './DonationPage'
 import MainPage from './MainPage'
 import Playground from './Playground'
 import ProjectPage from './ProjectPage'
@@ -46,6 +47,11 @@ export const ROUTES: Record<string, Route> = {
         path: '/courses',
         element: <Courses />,
         children: CourseRoutes,
+    },
+    Donation: {
+        label: 'Donation',
+        path: '/donation',
+        element: <DonationPage />,
     },
 }
 

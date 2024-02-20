@@ -75,6 +75,7 @@ const Nav = () => {
             ROUTES.Courses,
             ROUTES.Example,
             ROUTES.Projects,
+            ROUTES.Donation,
             ROUTES.Playground,
         ]
         const ButtonNavigation = routesToBtn.map((route) => (
