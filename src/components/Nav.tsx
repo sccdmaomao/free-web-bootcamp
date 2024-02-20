@@ -1,4 +1,4 @@
-import { Button, Dropdown, Menu, MenuButton, MenuItem } from '@mui/base'
+import { Button } from '@mui/base'
 import { styled, Typography } from '@mui/material'
 import { CenteredDiv } from 'components/ResponsiveComponents'
 import LogoIcon from 'icons/PlaceholderLogoIcon'
@@ -27,15 +27,37 @@ const OutletWrapper = styled('div')`
     margin-bottom: ${FOOTER_HEIGHT};
 `
 
-const CourseMenuWrapper = styled(`div`)`
-    display: flex;
-`
-
 // Main navigation bar
 const Nav = () => {
     const navigate = useNavigate()
     const NavigationItems = useMemo(() => {
         const navbarItems: ReactNode[] = []
+
+        //     const CourseMenuWrapper = styled(`div`)`
+        //     display: flex;
+        // `
+
+        // const MenuNavigation = (
+        //     <CourseMenuWrapper key="nav-menu">
+        //         <Dropdown>
+        //             <MenuButton>
+        //                 <Typography color={theme.palette.text.primary}>
+        //                     Course
+        //                 </Typography>
+        //             </MenuButton>
+        //             <Menu>
+        //                 <MenuItem
+        //                     onClick={() =>
+        //                         navigate('courses/environment-setup')
+        //                     }
+        //                 >
+        //                     Environment Setup
+        //                 </MenuItem>
+        //                 <MenuItem>course #1</MenuItem>
+        //             </Menu>
+        //         </Dropdown>
+        //     </CourseMenuWrapper>
+        // )
 
         const LogoIconNavButton = (
             <Button
@@ -46,30 +68,11 @@ const Nav = () => {
                 <LogoIcon />
             </Button>
         )
-        const MenuNavigation = (
-            <CourseMenuWrapper key="nav-menu">
-                <Dropdown>
-                    <MenuButton>
-                        <Typography color={theme.palette.text.primary}>
-                            Course
-                        </Typography>
-                    </MenuButton>
-                    <Menu>
-                        <MenuItem
-                            onClick={() =>
-                                navigate('courses/environment-setup')
-                            }
-                        >
-                            Environment Setup
-                        </MenuItem>
-                        <MenuItem>course #1</MenuItem>
-                    </Menu>
-                </Dropdown>
-            </CourseMenuWrapper>
-        )
+
         // ordered route buttons
         const routesToBtn = [
             ROUTES.Roadmap,
+            ROUTES.Courses,
             ROUTES.Example,
             ROUTES.Projects,
             ROUTES.Playground,
@@ -86,7 +89,7 @@ const Nav = () => {
                 </Typography>
             </Button>
         ))
-        navbarItems.push(LogoIconNavButton, MenuNavigation, ...ButtonNavigation)
+        navbarItems.push(LogoIconNavButton, ...ButtonNavigation)
         return navbarItems
     }, [])
 
