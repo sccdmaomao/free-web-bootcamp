@@ -14,6 +14,7 @@ const App = () => {
             children: Object.entries(ROUTES).map(([_, route]) => ({
                 path: route.path,
                 element: route.element,
+                children: route.children,
             })),
             errorElement: <Navigate replace to="/" />,
         },

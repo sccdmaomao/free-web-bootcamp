@@ -16,7 +16,7 @@ export default Component
 `
     return (
         <PlaygroundSection sectionTitle={'Code Blocks'}>
-            <CodeBlock codeString="'(num) => num + 1';" />
+            <CodeBlock codeString="(num) => num + 1;" />
             <CodeBlock codeString={longCodeString} />
         </PlaygroundSection>
     )

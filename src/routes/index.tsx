@@ -1,10 +1,20 @@
+import { ReactNode } from 'react'
+
+import Courses, { CourseRoutes } from './Courses/Courses'
 import MainPage from './MainPage'
 import Playground from './Playground'
 import ProjectPage from './ProjectPage'
 import RoadmapPage from './RoadmapPage'
 
+export interface Route {
+    label: string
+    path: string
+    element: ReactNode
+    children?: Route[]
+}
+
 // Object used in App.tsx to define valid routes
-export const ROUTES = {
+export const ROUTES: Record<string, Route> = {
     Main: {
         label: 'Introduction',
         path: '',
@@ -31,6 +41,12 @@ export const ROUTES = {
         path: '/playground',
         element: <Playground />,
     },
+    Courses: {
+        label: 'Courses',
+        path: '/courses',
+        element: <Courses />,
+        children: CourseRoutes,
+    },
 }
 
-export { MainPage, Playground }
+export { CourseRoutes, MainPage, Playground }

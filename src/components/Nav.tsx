@@ -27,6 +27,10 @@ const OutletWrapper = styled('div')`
     margin-bottom: ${FOOTER_HEIGHT};
 `
 
+const CourseMenuWrapper = styled(`div`)`
+    display: flex;
+`
+
 // Main navigation bar
 const Nav = () => {
     const navigate = useNavigate()
@@ -43,7 +47,7 @@ const Nav = () => {
             </Button>
         )
         const MenuNavigation = (
-            <div key="nav-menu" style={{ display: 'inline' }}>
+            <CourseMenuWrapper key="nav-menu">
                 <Dropdown>
                     <MenuButton>
                         <Typography color={theme.palette.text.primary}>
@@ -51,10 +55,17 @@ const Nav = () => {
                         </Typography>
                     </MenuButton>
                     <Menu>
+                        <MenuItem
+                            onClick={() =>
+                                navigate('courses/environment-setup')
+                            }
+                        >
+                            Environment Setup
+                        </MenuItem>
                         <MenuItem>course #1</MenuItem>
                     </Menu>
                 </Dropdown>
-            </div>
+            </CourseMenuWrapper>
         )
         // ordered route buttons
         const routesToBtn = [
