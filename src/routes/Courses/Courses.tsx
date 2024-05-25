@@ -1,6 +1,8 @@
 import { Button, styled } from '@mui/material'
+import { useEffect } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import theme, { complementary } from 'theme'
+import scrollToSection from 'utils/scrollToSection'
 
 import { Route } from '../index'
 import EnvironmentSetup from './EnvironmentSetup'
@@ -40,6 +42,10 @@ const Courses = () => {
             </CourseNavigationButton>
         ))
     }
+
+    useEffect(() => {
+        scrollToSection(`${location.hash.slice(1)}`) // remove hash (#) before id
+    }, [location.hash])
 
     return isTopLevel ? (
         <ListWrapper>{renderCourses()}</ListWrapper>

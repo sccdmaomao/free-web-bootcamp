@@ -21,7 +21,7 @@ const RoadmapPage = () => {
     return (
         <div>
             Environment Setup, Command line skills, Version control (git), NPM,
-            HTML, CSS, JavaScript, React
+            HTML, CSS, JavaScript, React, Advanced Topics, Project practices
         </div>
     )
 }
