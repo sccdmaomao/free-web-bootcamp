@@ -11,21 +11,27 @@ import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 const Wrapper = styled('div')`
     border-radius: 10px 10px 10px 10px;
     &:hover {
-        /* box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.75); */
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.35);
     }
 `
+
+const CopyButton = styled(IconButton)`
+    position: absolute;
+    color: black;
+    right: 20%;
+`
+
 const CodeBlock: React.FC<{ codeString: string }> = ({ codeString }) => {
     return (
         <Wrapper>
             <CopyToClipboard text={codeString}>
-                <IconButton aria-label="copy">
-                    <ContentCopyIcon />
-                </IconButton>
+                <CopyButton aria-label="copy">
+                    <ContentCopyIcon fontSize="small" />
+                </CopyButton>
             </CopyToClipboard>
             <SyntaxHighlighter
                 language="javascript"
                 style={docco}
-                showInlineLineNumbers
                 showLineNumbers
                 wrapLongLines
                 customStyle={{ backgroundColor: '#f0f0f0' }}
