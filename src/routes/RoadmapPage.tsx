@@ -1,28 +1,23 @@
-/* idea:
+import { Typography } from '@mui/material'
+import { CenteredDiv, PageWrapper } from 'components/ResponsiveComponents'
 
-node graph
-
-each node is a major topic. clicking will navigate the page to the topic
-some topics are
-environment setup
-command line
-git
-node npm nvm
-HTML
-CSS
-Javascript
-React (framework)
-MUI (component library)
-API (Rest / Graphql)
-State management (Redux)
-CSS-IN-JS / SCSS / CSS
-*/
 const RoadmapPage = () => {
     return (
-        <div>
-            Environment Setup, Command line skills, Version control (git), NPM,
-            HTML, CSS, JavaScript, React, Advanced Topics, Project practices
-        </div>
+        <PageWrapper id="roadmap">
+            <CenteredDiv>
+                <Typography variant="h6">
+                    Unlock your web development potential with our
+                    all-encompassing React course! Start by setting up your
+                    development environment and mastering command line skills.
+                    Get hands-on with version control using Git and manage
+                    dependencies with NPM. Build a solid foundation with HTML,
+                    CSS, and JavaScript before diving into React. Explore
+                    advanced topics to elevate your skills, and apply your
+                    knowledge through practical projects. Join us today and
+                    transform into a proficient React developer!
+                </Typography>
+            </CenteredDiv>
+        </PageWrapper>
     )
 }
 

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { NAV_HEIGHT } from 'components/ResponsiveComponents'
 
 import PgCodeBlock from './PgCodeBlock'
 import PgFontAwesome from './PgFontAwesome'
@@ -11,6 +12,8 @@ const Wrapper = styled('div')`
     margin: 0 20%;
     > h1 {
         text-align: center;
+        margin: 0;
+        padding-top: ${NAV_HEIGHT};
     }
     > section {
         border-bottom: 1px solid;

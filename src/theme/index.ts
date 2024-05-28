@@ -25,6 +25,7 @@ Use as the background color for the main content area to ensure readability.
 Employ in sections where a neutral and clean backdrop is desired.
  */
 export const background = `#f5f1fe`
+export const navBackground = `#f6f3fc`
 
 /**
 Use for general text content to ensure readability against the background.

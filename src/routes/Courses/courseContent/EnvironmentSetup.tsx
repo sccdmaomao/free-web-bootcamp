@@ -1,5 +1,5 @@
-import CoursePageLayout from './components/CoursePageLayout'
-import CourseSection from './components/CourseSection'
+import CoursePageLayout from '../components/CoursePageLayout'
+import CourseSection from '../components/CourseSection'
 
 const EnvironmentSetup = () => {
     return (

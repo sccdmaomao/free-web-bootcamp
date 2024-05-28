@@ -1,15 +1,15 @@
 import { Button } from '@mui/base'
 import { styled, Typography } from '@mui/material'
-import { CenteredDiv } from 'components/ResponsiveComponents'
+import { CenteredDiv, NAV_HEIGHT } from 'components/ResponsiveComponents'
 import LogoIcon from 'icons/PlaceholderLogoIcon'
 import { ReactNode, useMemo } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { ROUTES } from 'routes'
-import theme from 'theme'
+import theme, { navBackground } from 'theme'
 
 const StyledNav = styled('nav')((props) => ({
-    backgroundColor: theme.palette.background.default,
-    padding: '1em',
+    backgroundColor: navBackground,
+    position: 'absolute',
     button: {
         background: 'transparent',
         border: 'none',
@@ -19,8 +19,10 @@ const StyledNav = styled('nav')((props) => ({
     },
 }))
 
-const OutletWrapper = styled('div')`
-    padding-bottom: 1em;
+const OutletWrapper = styled('div')``
+
+const NavWrapper = styled('div')`
+    height: ${NAV_HEIGHT};
 `
 
 // Main navigation bar
@@ -91,14 +93,14 @@ const Nav = () => {
     }, [])
 
     return (
-        <div>
+        <NavWrapper>
             <StyledNav>
                 <CenteredDiv>{NavigationItems} </CenteredDiv>
             </StyledNav>
             <OutletWrapper>
                 <Outlet />
             </OutletWrapper>
-        </div>
+        </NavWrapper>
     )
 }
 

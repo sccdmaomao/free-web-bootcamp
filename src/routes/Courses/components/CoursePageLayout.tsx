@@ -8,7 +8,7 @@ interface CoursePageLayoutProps {
 }
 
 const Title = styled('h1')`
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
 `
 
 const CoursePageLayout: React.FC<CoursePageLayoutProps> = ({
@@ -18,7 +18,6 @@ const CoursePageLayout: React.FC<CoursePageLayoutProps> = ({
     return (
         <CenteredDiv flexDirection="column">
             <Title>{title}</Title>
-
             <div>{children}</div>
         </CenteredDiv>
     )
